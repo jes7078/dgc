@@ -1,8 +1,14 @@
 import React from 'react'
-import HelloWorld from '../components/HelloWorld'
+import Header from '../components/Header/Header'
+import Hamburger from '../components/Hamburger/Hamburger'
 
 const HomePage = () => {
-  return <HelloWorld />
+  return (
+    <section>
+      <Header />
+      <Hamburger />
+    </section>
+  )
 }
 
 export default HomePage
