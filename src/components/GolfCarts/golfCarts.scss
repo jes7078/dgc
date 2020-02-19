@@ -1,0 +1,47 @@
+.headerSpacer {
+	height: 10vw;
+}
+
+.golfCarts h1 {
+	color: black;
+	text-align: center;
+	font-size: 1.8rem;
+	font-size: 4vw;
+}
+
+.golfCartWrapper {
+	border: 2px solid white;
+	box-shadow: 0px 0px 10px 2px rgb(90, 224, 253), 0px 0px 30px 10px rgb(93, 249, 253);
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	max-width: 600px;
+}
+
+.picContainer {
+	width: 80%;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.featuredGolfCartPic {
+	max-width: 100%;
+	max-height: 30rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.description {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
