@@ -6,7 +6,7 @@ const GolfCarts = () => {
 	const golfCartPic = [ '/Assets/GolfCart.jpg', '/Assets/GolfCart2.jpg' ]
 
 	const subtract = () => {
-		if (golfCartNumber != 0) {
+		if (golfCartNumber !== 0) {
 			setGolfCartNumber(golfCartNumber - 1)
 		} else {
 			setGolfCartNumber(golfCartPic.length - 1)
@@ -32,7 +32,7 @@ const GolfCarts = () => {
 			}, 5000)
 			return () => clearInterval(interval)
 		},
-		[ golfCartNumber ]
+		[ golfCartNumber, golfCartPic.length ]
 	)
 
 	return (
