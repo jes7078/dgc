@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './golfCarts.scss'
-import GolfCart from '../../Assets/GolfCart.jpg'
 
 const GolfCarts = () => {
+	const [ golfCartNumber, setGolfCartNumber ] = useState(0)
+	const golfCartPic = [ '/Assets/GolfCart.jpg', '/Assets/GolfCart2.jpg' ]
+
+	const subtract = () => {
+		if (golfCartNumber != 0) {
+			setGolfCartNumber(golfCartNumber - 1)
+		} else {
+			setGolfCartNumber(golfCartPic.length - 1)
+		}
+	}
+
+	const add = () => {
+		if (golfCartNumber < golfCartPic.length - 1) {
+			setGolfCartNumber(golfCartNumber + 1)
+		} else {
+			setGolfCartNumber(0)
+		}
+	}
+
+	useEffect(
+		() => {
+			const interval = setInterval(() => {
+				if (golfCartNumber < golfCartPic.length - 1) {
+					setGolfCartNumber(golfCartNumber + 1)
+				} else {
+					setGolfCartNumber(0)
+				}
+			}, 5000)
+			return () => clearInterval(interval)
+		},
+		[ golfCartNumber ]
+	)
+
 	return (
 		<div>
 			<section className="headerSpacer" />
@@ -10,7 +42,13 @@ const GolfCarts = () => {
 				<h1>Featured Golf Cart</h1>
 				<section className="golfCartWrapper">
 					<section className="picContainer">
-						<img className="featuredGolfCartPic" src={GolfCart} alt="golf cart" />
+						<button onClick={subtract}>
+							<i class="fas fa-chevron-left" />
+						</button>
+						<img className="featuredGolfCartPic" src={golfCartPic[golfCartNumber]} alt="golf cart" />
+						<button onClick={add}>
+							<i class="fas fa-chevron-right" />
+						</button>
 					</section>
 					<p className="description">
 						2005 Club Car upgraded in 2019 with a six inch lift, new batteries, tires, suspension, led
