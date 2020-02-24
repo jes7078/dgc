@@ -2,6 +2,12 @@
   height: 150px;
 }
 
+.golfCarts {
+  height: 100vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .golfCarts h1 {
   color: black;
   text-align: center;
@@ -34,7 +40,6 @@
   margin-right: auto;
   border-radius: 30px;
   margin-top: 1rem;
-  margin-bottom: 1rem;
   align-items: center;
   justify-content: space-around;
 }

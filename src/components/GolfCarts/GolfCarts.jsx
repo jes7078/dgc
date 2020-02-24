@@ -40,7 +40,7 @@ const GolfCarts = () => {
         <section className="golfCartWrapper">
           <section className="picContainer">
             <button onClick={subtract}>
-              <i class="fas fa-chevron-left" />
+              <i className="fas fa-chevron-left" />
             </button>
             <img
               className="featuredGolfCartPic"
@@ -48,7 +48,7 @@ const GolfCarts = () => {
               alt="golf cart"
             />
             <button onClick={add}>
-              <i class="fas fa-chevron-right" />
+              <i className="fas fa-chevron-right" />
             </button>
           </section>
           <p className="description">
