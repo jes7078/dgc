@@ -1,47 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import React, { useRef, useState } from 'react'
 import './hamburger.scss'
-import props from 'prop-types'
-
-// const toggleMenuClasses = () => {
-//   let hamburgerIcon = document.getElementById('burger')
-//   hamburgerIcon.classList.toggle('is-active')
-//   let mobileMenu = document.getElementById('menu-container')
-//   mobileMenu.classList.toggle('opened')
-// }
-
-// const handleClick = e => {
-//   let mobileMenu = document.getElementById('menu-container')
-//   console.log(mobileMenu.classList.value)
-//   if (mobileMenu.classList.value === 'menu-container opened') {
-//     mobileMenu.classList.toggle('opened')
-//   } else {
-//   }
-// }
+import useOutsideClick from './useOutsideClick'
 
 const Menu = () => {
-  const [Open, setOpen] = useState(false)
-  // useEffect(() =>
-  //   props.history.listen(() => {
-  //     setIsMenuOpen(false)
-  //   })
-  // )
+  const ref = useRef()
+  const [burgerStatus, setBurgerStatus] = useState('burger')
+  const [menuStatus, setMenuStatus] = useState('menu-container')
+  const [toggle, setToggle] = useState(false)
+  const handleClick = () => {
+    if (toggle === false) {
+      setToggle(true)
+      setBurgerStatus('burger is-active')
+      setMenuStatus('menu-container opened')
+    } else {
+      setToggle(false)
+      setBurgerStatus('burger')
+      setMenuStatus('menu-container')
+    }
+  }
+  useOutsideClick(ref, () => {
+    setToggle(false)
+    setBurgerStatus('burger')
+    setMenuStatus('menu-container')
+  })
 
   return (
-    <section>
-      <section className="burger" id="burger" onClick={() => setOpen(!Open)}>
+    <section ref={ref}>
+      <section className={burgerStatus} id="burger" onClick={handleClick}>
         <section className="lines">
           <section className="line" />
           <section className="line" />
           <section className="line" />
         </section>
       </section>
-      <section className="menu-container" id="menu-container">
+      <section className={menuStatus} id="menu-container">
         <section className="menu-title">Dunedin Golf Carts</section>
         <a
           className="menu-github"
           id="burger"
-          onClick={() => setOpen(true)}
+          onClick={handleClick}
           href="#aboutSection"
         >
           About
@@ -49,7 +46,7 @@ const Menu = () => {
         <a
           className="menu-twitter"
           id="burger"
-          onClick={() => setOpen(true)}
+          onClick={handleClick}
           href="#contact"
         >
           Contact
