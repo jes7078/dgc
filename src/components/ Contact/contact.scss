@@ -8,7 +8,74 @@
   margin-top: 0;
 }
 
-.contactBody {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.inner form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formName,
+.formEmail {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid lightgray;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 2rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formMessage {
+  border: 1px solid lightgray;
+  margin: 1rem;
+  height: 7rem;
+  resize: vertical;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submitButton {
+  display: block;
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactForm {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #f29b91 0px,
+    #f09290 30px,
+    transparent 30px,
+    transparent 50px,
+    #83b3db 50px,
+    #84adcb 80px,
+    transparent 80px,
+    transparent 100px
+  );
+  padding: 23px;
+}
+.inner {
+  background: white;
+  padding-bottom: 1rem;
+}
+
+.stamp {
+  display: block;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  padding-top: 0.5rem;
+  width: 150px;
+}
+
+@media (min-width: 1000px) {
+  .contactForm {
+    width: 800px;
+  }
 }
